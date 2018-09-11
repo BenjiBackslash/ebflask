@@ -52,8 +52,7 @@ sns_conn = sns.connect_to_region(application.config['AWS_REGION'])
 
 @application.route('/')
 def welcome():
-    theme = application.config['THEME']
-    return flask.render_template('index.html', theme=theme, flask_debug=application.debug)
+    return Response(json.dumps("welcome. check out products page."), status=201, mimetype='application/json')
 
 
 @application.route('/signup', methods=['POST'])
